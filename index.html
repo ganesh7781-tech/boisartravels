@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boisar Travels — Best Car Rental & Taxi Service in Boisar, Palghar</title>
+<meta name="description" content="Book reliable cab, car rental, airport transfer, tempo traveller and bus services in Boisar, Palghar, Tarapur MIDC. 24/7 available.">
+<meta name="keywords" content="car rental in Boisar, taxi service in Boisar, Boisar to Mumbai Airport cab, tempo traveller Palghar, bus rental Boisar">
+<meta property="og:title" content="Boisar Travels — Premium Tours & Travels">
+<meta property="og:description" content="Your Journey, Our Responsibility.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="style.css">
+<style>
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,29,38,.88),rgba(11,29,38,.65))}
+.hero-inner{position:relative;z-index:1;display:flex;align-items:center;gap:40px;padding:80px 0 40px}
+.hero-text{flex:1}
+.hero-text h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;line-height:1.15;margin-bottom:20px;letter-spacing:-1px}
+.hero-text p{font-size:1.15rem;color:rgba(255,255,255,.7);margin-bottom:36px;max-width:520px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-visual{flex:1;display:flex;justify-content:center}
+.hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-md);padding:30px;backdrop-filter:blur(14px);width:100%;max-width:400px}
+.hero-card h3{font-size:1.15rem;margin-bottom:16px;color:var(--primary)}
+.search-field{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-sm);padding:12px 16px;color:#fff;font-size:0.9rem;width:100%;margin-bottom:12px;font-family:'Poppins',sans-serif;outline:none;transition:var(--transition)}
+.search-field:focus{border-color:var(--primary)}
+.search-field::placeholder{color:rgba(255,255,255,.4)}
+select.search-field{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+select.search-field option{background:#1a1a1a;color:#fff}
+.hero-card .btn{width:100%;justify-content:center;margin-top:6px}
+
+/* TRUST */
+.trust-row{background:var(--bg-light);padding:30px 0}
+.trust-grid{display:flex;justify-content:center;gap:50px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.9rem;color:var(--text-body)}
+.trust-icon{width:36px;height:36px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;flex-shrink:0}
+
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.svc-card{background:#fff;border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;transition:var(--transition)}
+.svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--primary)}
+.svc-card img{width:100%;height:200px;object-fit:cover}
+.svc-body{padding:24px}
+.svc-body h3{font-size:1.1rem;margin-bottom:10px;font-weight:600}
+.svc-body p{font-size:.9rem;color:var(--text-body);line-height:1.7}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;text-align:center}
+.why-item{padding:20px 12px}
+.why-num{width:48px;height:48px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 18px}
+.why-item h4{font-size:1rem;margin-bottom:8px;font-weight:600}
+.why-item p{font-size:.85rem;color:var(--text-body)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-text h2{font-size:2.2rem;font-weight:700;margin-bottom:24px;line-height:1.3}
+.about-text p{color:var(--text-body);margin-bottom:20px}
+.about-img{border-radius:var(--radius-lg);overflow:hidden;height:380px}
+.about-img img{width:100%;height:100%;object-fit:cover}
+
+/* TESTIMONIALS */
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.test-card{background:#fff;border:1px solid var(--border-light);border-radius:var(--radius-md);padding:32px}
+.test-card:hover{box-shadow:var(--shadow-md)}
+.stars{color:var(--primary);font-size:1.1rem;margin-bottom:16px;letter-spacing:2px}
+.test-card p{font-size:.95rem;color:var(--text-body);margin-bottom:20px;font-style:italic}
+.reviewer{display:flex;align-items:center;gap:12px}
+.reviewer-avatar{width:40px;height:40px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+.reviewer-name{font-weight:600;font-size:.9rem}
+
+/* STATS */
+section.section-dark{position:relative;background:url('images/outstation.png') center/cover no-repeat;color:#fff;overflow:hidden}
+section.section-dark::before{content:'';position:absolute;inset:0;background:rgba(5,71,82,0.92);z-index:0}
+section.section-dark .container{position:relative;z-index:1}
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;padding:60px 0}
+.stat-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-md);padding:30px}
+.stat-card h3{font-size:2.8rem;font-weight:800;color:var(--primary);margin-bottom:4px}
+.stat-card p{font-size:.85rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1.5px;font-weight:500}
+
+/* CTA */
+.cta-banner{position:relative;background:url('images/premium-service.png') center/cover no-repeat;border-radius:var(--radius-lg);padding:60px;text-align:center;color:#fff;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;inset:0;background:rgba(0,175,245,0.85);z-index:0}
+.cta-banner h2,.cta-banner p,.cta-banner .btn{position:relative;z-index:1}
+.cta-banner h2{font-size:2rem;margin-bottom:12px;font-weight:700}
+.cta-banner p{margin-bottom:28px;opacity:.9}
+.cta-banner .btn-dark{background:var(--dark);border-color:var(--dark)}
+
+
+/* CONTACT SECTION */
+.contact-row{display:grid;grid-template-columns:1fr 1.5fr;gap:40px;margin-top:20px}
+.contact-box{background:var(--bg-light);padding:30px;border-radius:var(--radius-md);border:1px solid var(--border-light)}
+.contact-item{display:flex;gap:15px;margin-bottom:20px}
+.contact-icon{width:40px;height:40px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-text h4{font-size:0.9rem;font-weight:600;margin-bottom:2px}
+.contact-text p{font-size:0.85rem;color:var(--text-body)}
+.map-box{border-radius:var(--radius-md);overflow:hidden;height:300px;border:1px solid var(--border-light)}
+.map-box iframe{width:100%;height:100%;border:0}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+<div class="container nav-container">
+<a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>Boisar <span>Travels</span></a>
+<ul class="nav-links">
+<li><a href="index.html" class="active">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<div class="nav-right">
+<a href="tel:+91XXXXXXXXXX" class="nav-phone">📞 +91 XXXXXXXXXX</a>
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="btn btn-primary">Book Now</a>
+<div class="hamburger"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div>
+</div>
+</div>
+</header>
+
+<!-- HERO with real background image -->
+<section class="hero">
+<div class="hero-bg">
+<img src="images/car-rental.png" alt="Boisar Travels Hero Background">
+</div>
+<div class="container hero-inner">
+<div class="hero-text reveal">
+<h1>Boisar's Most Trusted <span class="primary-text">Tours & Travels</span> Service</h1>
+<p>Premium cars, luxury vehicles, buses & tempo travellers — available 24/7 for local, outstation & airport trips.</p>
+<div class="hero-btns">
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="btn btn-primary">WhatsApp Booking</a>
+<a href="tel:+91XXXXXXXXXX" class="btn btn-white">Call Now</a>
+</div>
+</div>
+<div class="hero-visual reveal">
+<div class="hero-card">
+<h3>Quick Booking</h3>
+<input class="search-field" type="text" placeholder="Pickup Location (e.g. Boisar)">
+<input class="search-field" type="text" placeholder="Drop Location (e.g. Mumbai Airport)">
+<select class="search-field"><option value="">Select Vehicle</option><option>Sedan (Dzire / Etios)</option><option>SUV (Ertiga / Innova)</option><option>Tempo Traveller</option><option>Luxury (Fortuner / Crysta)</option></select>
+<input class="search-field" type="date">
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="btn btn-primary">Search Rides →</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TRUST -->
+<div class="trust-row"><div class="container"><div class="trust-grid reveal">
+<div class="trust-item"><div class="trust-icon">✓</div>On-time Guarantee</div>
+<div class="trust-item"><div class="trust-icon">✦</div>Clean Vehicles</div>
+<div class="trust-item"><div class="trust-icon">★</div>Pro Drivers</div>
+<div class="trust-item"><div class="trust-icon">⟐</div>24/7 Support</div>
+</div></div></div>
+
+<!-- SERVICES with real images -->
+<section class="section" id="services">
+<div class="container">
+<div class="section-header reveal"><h2>Our Services</h2><p>Everything you need for comfortable and safe travel</p></div>
+<div class="svc-grid">
+<div class="svc-card reveal">
+<img src="images/car-rental.png" alt="Car rental sedan" loading="lazy">
+<div class="svc-body"><h3>Car Rental</h3><p>Dzire, Etios & more for local and outstation trips. Comfortable and clean.</p></div>
+</div>
+<div class="svc-card reveal">
+<img src="images/airport.png" alt="Airport terminal transfer" loading="lazy">
+<div class="svc-body"><h3>Airport Transfer</h3><p>Boisar to Mumbai Airport with fixed transparent pricing. 24/7.</p></div>
+</div>
+<div class="svc-card reveal">
+<img src="images/tempo-bus.png" alt="Bus tempo traveller" loading="lazy">
+<div class="svc-body"><h3>Tempo & Bus</h3><p>9 to 17 seater vehicles for group travel, weddings and events.</p></div>
+</div>
+<div class="svc-card reveal">
+<img src="images/luxury-car.png" alt="Luxury SUV rental" loading="lazy">
+<div class="svc-body"><h3>Luxury Rental</h3><p>Fortuner, Innova Crysta for weddings, VIP guests and special events.</p></div>
+</div>
+<div class="svc-card reveal">
+<img src="images/outstation.png" alt="Outstation road trip" loading="lazy">
+<div class="svc-body"><h3>Outstation Trips</h3><p>Shirdi, Nashik, Lonavala, Goa — expert drivers, fair rates.</p></div>
+</div>
+<div class="svc-card reveal">
+<img src="images/corporate.png" alt="Corporate transport" loading="lazy">
+<div class="svc-body"><h3>Corporate Transport</h3><p>Employee pickup/drop for Tarapur MIDC companies. Monthly billing.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WHY US -->
+<section class="section section-light">
+<div class="container">
+<div class="section-header reveal"><h2>Why Choose Us?</h2><p>Trusted by 500+ happy clients across Palghar district</p></div>
+<div class="why-grid reveal">
+<div class="why-item"><div class="why-num">1</div><h4>On-time</h4><p>We value your time</p></div>
+<div class="why-item"><div class="why-num">2</div><h4>Sanitized</h4><p>Cleaned every trip</p></div>
+<div class="why-item"><div class="why-num">3</div><h4>Verified</h4><p>Checked drivers</p></div>
+<div class="why-item"><div class="why-num">4</div><h4>Transparent</h4><p>No hidden charges</p></div>
+<div class="why-item"><div class="why-num">5</div><h4>24/7</h4><p>Always available</p></div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT with real image -->
+<section class="section" id="about">
+<div class="container">
+<div class="about-grid">
+<div class="about-text reveal">
+<h2>Driven by Trust. <br>Powered by <span class="primary-text">Service.</span></h2>
+<p>Boisar Travels was founded with a simple mission: to provide the most reliable, comfortable, and professional travel services in the Palghar district.</p>
+<p>Our fleet consists of well-maintained vehicles driven by professional chauffeurs who prioritize your safety. We serve Boisar, Palghar, and Tarapur MIDC communities 24/7.</p>
+</div>
+<div class="about-img reveal">
+<img src="images/premium-service.png" alt="Premium car service" loading="lazy">
+</div>
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-light">
+<div class="container">
+<div class="section-header reveal"><h2>What Our Clients Say</h2></div>
+<div class="test-grid">
+<div class="test-card reveal"><div class="stars">★★★★★</div><p>"Best taxi service in Boisar. Clean cars and punctual drivers."</p><div class="reviewer"><div class="reviewer-avatar">R</div><div class="reviewer-name">Rahul M.</div></div></div>
+<div class="test-card reveal"><div class="stars">★★★★★</div><p>"Highly recommended for airport travel. Never missed a flight!"</p><div class="reviewer"><div class="reviewer-avatar">P</div><div class="reviewer-name">Priya S.</div></div></div>
+<div class="test-card reveal"><div class="stars">★★★★★</div><p>"Corporate booking was smooth. Dedicated vehicle, monthly billing."</p><div class="reviewer"><div class="reviewer-avatar">A</div><div class="reviewer-name">Anil K.</div></div></div>
+</div>
+</div>
+</section>
+
+<!-- STATS -->
+<section class="section-dark">
+<div class="container">
+<div class="stats-row reveal">
+<div class="stat-card"><h3 class="stat-number" data-target="500">0+</h3><p>Happy Clients</p></div>
+<div class="stat-card"><h3 class="stat-number" data-target="50">0+</h3><p>Vehicles</p></div>
+<div class="stat-card"><h3 class="stat-number" data-target="5">0+</h3><p>Years</p></div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+<div class="container">
+<div class="cta-banner reveal">
+<h2>Ready to Book Your Ride?</h2>
+<p>Get instant confirmation via WhatsApp — available 24/7</p>
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="btn btn-dark">Book on WhatsApp →</a>
+</div>
+</div>
+</section>
+<!-- CONTACT SECTION -->
+<section class="section" id="contact">
+<div class="container">
+<div class="section-header reveal"><h2>Contact Us</h2><p>Get in touch for bookings and enquiries</p></div>
+<div class="contact-row reveal">
+<div class="contact-box">
+<div class="contact-item"><div class="contact-icon">📍</div><div class="contact-text"><h4>Location</h4><p>Boisar East, Palghar District, Maharashtra 401501</p></div></div>
+<div class="contact-item"><div class="contact-icon">📞</div><div class="contact-text"><h4>Phone</h4><p>+91 XXXXXXXXXX</p></div></div>
+<div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-text"><h4>Email</h4><p>info@boisartravels.com</p></div></div>
+<div class="contact-item"><div class="contact-icon">⏰</div><div class="contact-text"><h4>Hours</h4><p>24/7 Available</p></div></div>
+<div style="margin-top:20px"><a href="https://wa.me/91XXXXXXXXXX" class="btn btn-primary" style="width:100%;justify-content:center">Message on WhatsApp</a></div>
+</div>
+<div class="map-box">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15024.18!2d72.7528!3d19.8045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71d60464f1c1f%3A0x6a1c5d9e5b7b1b1a!2sBoisar%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen loading="lazy"></iframe>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SEO -->
+<div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><p>Car rental in Boisar, Taxi service in Palghar, Boisar to Mumbai Airport cab, Tempo traveller in Palghar, Bus rental in Boisar, Tarapur MIDC cab service.</p></div>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand"><div class="logo">Boisar <span>Travels</span></div><p>Your Journey, Our Responsibility — Premium travel solutions in Boisar and beyond for over 5 years.</p></div>
+<div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div class="footer-col"><h4>Services</h4><ul><li>Airport Transfers</li><li>Outstation Trips</li><li>Corporate Rental</li><li>Wedding Cars</li></ul></div>
+<div class="footer-col"><h4>Contact</h4>
+<div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>Boisar East, Palghar, 401501</div>
+<div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25 1.02l-2.2 2.2z"/></svg>+91 XXXXXXXXXX</div>
+<div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>info@boisartravels.com</div>
+</div>
+</div>
+<div class="footer-bottom"><p>© 2025 Boisar Travels. All rights reserved.</p></div>
+</div>
+</footer>
+
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="whatsapp-float"><svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.63 1.438h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script src="main.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Boisar Travels","telephone":"+91XXXXXXXXXX","address":{"@type":"PostalAddress","streetAddress":"Boisar East","addressLocality":"Palghar","postalCode":"401501","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":19.8045,"longitude":72.7528}}</script>
+</body>
+</html>
