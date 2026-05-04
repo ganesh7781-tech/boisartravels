@@ -14,33 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    /* ===== Counter Animation ===== */
-    const statsBox = document.querySelector('.stats-row');
-    let counted = false;
-
-    if (statsBox) {
-        const cObserver = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting && !counted) {
-                counted = true;
-                document.querySelectorAll('.stat-number').forEach(el => {
-                    const target = +el.dataset.target;
-                    let current = 0;
-                    const step = target / 120;
-                    const tick = () => {
-                        current += step;
-                        if (current < target) {
-                            el.textContent = Math.ceil(current) + '+';
-                            requestAnimationFrame(tick);
-                        } else {
-                            el.textContent = target + '+';
-                        }
-                    };
-                    tick();
-                });
-            }
-        }, { threshold: 0.5 });
-        cObserver.observe(statsBox);
-    }
 
     /* ===== Mobile Menu ===== */
     const hamburger = document.querySelector('.hamburger');
@@ -58,5 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 hamburger.classList.remove('toggle');
             });
         });
+    }
+
+    /* ===== Hero Slider ===== */
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 5000);
     }
 });
