@@ -29,7 +29,7 @@ html, body { overflow-x: hidden; width: 100%; position: relative; }
 .hero-text p{font-size:1.2rem;color:rgba(255,255,255,0.9);margin-bottom:40px;max-width:550px;line-height:1.6}
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
 .hero-visual{flex:1;display:flex;justify-content:flex-end}
-.hero-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-lg);padding:40px;backdrop-filter:blur(24px) saturate(180%);width:100%;max-width:440px;box-shadow:0 30px 60px -12px rgba(0,0,0,0.3)}
+.hero-card{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-lg);padding:40px;width:100%;max-width:440px;box-shadow:0 30px 60px -12px rgba(0,0,0,0.3)}
 .hero-card h3{font-size:1.4rem;margin-bottom:24px;color:#fff;font-weight:700;display:flex;align-items:center;gap:10px}
 .hero-card h3::before{content:'';width:4px;height:20px;background:var(--accent);border-radius:2px}
 .search-field{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-md);padding:14px 18px;color:#fff;font-size:0.95rem;width:100%;margin-bottom:16px;font-family:'Poppins',sans-serif;outline:none;transition:var(--transition)}
@@ -134,8 +134,7 @@ section.section-dark .container{position:relative;z-index:1}
     position: fixed;
     z-index: 2000;
     inset: 0;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.75);
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -215,13 +214,12 @@ section.section-dark .container{position:relative;z-index:1}
 .trip-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(10, 37, 64, 0.4);
+    background: rgba(10, 37, 64, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transition: var(--transition);
-    backdrop-filter: blur(2px);
 }
 .daily-trip-card:hover .trip-overlay { opacity: 1; }
 .trip-overlay .btn { transform: translateY(20px); transition: var(--transition); }
