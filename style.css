@@ -443,6 +443,19 @@ footer {
     font-size: 0.85rem;
 }
 
+.test-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+}
+
 /* ===== SCROLL ANIMATIONS ===== */
 .reveal {
     opacity: 0;
@@ -547,6 +560,8 @@ footer {
     .footer-brand .logo { justify-content: center; }
 
     .hero-text h1 { font-size: 1.8rem; }
+    .test-grid, .mission-grid { grid-template-columns: 1fr; }
+    .about-img { height: 240px; margin-top: 20px; }
 }
 
 @media (max-width: 480px) {
