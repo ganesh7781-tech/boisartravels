@@ -84,15 +84,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ===== Scroll Progress Car ===== */
-    const scrollProgressCar = document.getElementById('scrollProgressCar');
-    if (scrollProgressCar) {
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            // The car stays within the track from top 0% to 100%
-            scrollProgressCar.style.top = scrolled + "%";
-        });
-    }
 });

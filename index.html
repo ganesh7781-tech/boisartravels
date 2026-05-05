@@ -106,25 +106,16 @@ section.section-dark .container{position:relative;z-index:1}
 .map-box{border-radius:var(--radius-md);overflow:hidden;height:300px;border:1px solid var(--border-light)}
 .map-box iframe{width:100%;height:100%;border:0}
 
-/* SCROLL PROGRESS CAR */
+/* SCROLL PROGRESS CAR - Steady at Corner */
 .scroll-progress-container {
     position: fixed;
-    left: 15px;
-    top: 120px;
-    bottom: 50px;
-    width: 2px;
-    background: rgba(10, 37, 64, 0.1);
+    left: 20px;
+    bottom: 25px;
     z-index: 1000;
-    border-radius: 1px;
 }
 .scroll-progress-car {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 55px;
-    will-change: top;
+    width: 60px;
     pointer-events: none;
-    transition: top 0.1s ease-out;
 }
 .scroll-progress-car img {
     width: 100%;
@@ -133,7 +124,8 @@ section.section-dark .container{position:relative;z-index:1}
 }
 
 @media (max-width: 768px) {
-    .scroll-progress-container { display: none; }
+    .scroll-progress-container { bottom: 15px; left: 10px; }
+    .scroll-progress-car { width: 45px; }
 }
 
 /* PROMO MODAL */
