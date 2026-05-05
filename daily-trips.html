@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Routes & Schedule — Boisar Travels</title>
+    <link rel="icon" type="image/png" href="images/bt-logo.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .trip-header { padding: 120px 0 60px; background: var(--dark); color: #fff; text-align: center; }
+        .trip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+        .trip-detail-card { background: #fff; border-radius: var(--radius-lg); border: 1px solid var(--border-light); overflow: hidden; box-shadow: var(--shadow-md); }
+        .trip-img { width: 100%; height: 300px; object-fit: cover; }
+        .trip-content { padding: 40px; }
+        .trip-content h2 { color: var(--dark); margin-bottom: 20px; font-size: 1.8rem; }
+        .schedule-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .schedule-table th, .schedule-table td { text-align: left; padding: 12px; border-bottom: 1px solid var(--border-light); }
+        .schedule-table th { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        .price-tag { display: inline-block; padding: 5px 15px; background: var(--bg-light); border-radius: var(--radius-pill); font-weight: 700; color: var(--accent-orange); margin-top: 10px; }
+        
+        @media (max-width: 992px) {
+            .trip-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="images/bt-logo.png" alt="Boisar Travels Logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Our Services</a></li>
+                <li><a href="index.html#fleet">Fleet</a></li>
+                <li><a href="index.html#daily-trips" class="active">Daily Trips</a></li>
+                
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="https://wa.me/918624849674" class="btn btn-primary">Book Now</a>
+                <div class="hamburger"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="trip-header">
+        <div class="container">
+            <h1 class="reveal">Daily Commute Schedule</h1>
+            <p class="reveal">Fixed routes for regular travelers and corporate employees</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="trip-grid">
+                <!-- Boisar to Daman -->
+                <div class="trip-detail-card reveal">
+                    <img src="images/Boisar to Daman.png" alt="Boisar to Daman" class="trip-img" style="height:auto; object-fit:contain;">
+                    <div class="trip-content" style="text-align:center;">
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Boisar-Daman%20Daily%20Trip" class="btn btn-primary" style="width:100%;">Book This Trip on WhatsApp</a>
+                    </div>
+                </div>
+
+                <!-- Boisar to Mumbai -->
+                <div class="trip-detail-card reveal">
+                    <img src="images/Creative For Boisar Tour and Travels.png" alt="Boisar to Mumbai" class="trip-img" style="height:auto; object-fit:contain;">
+                    <div class="trip-content" style="text-align:center;">
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Boisar-Mumbai%20Daily%20Trip" class="btn btn-primary" style="width:100%;">Book This Trip on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top:60px; text-align:center;" class="reveal">
+                <h3>Custom Route Needed?</h3>
+                <p>We provide dedicated vehicle services for companies and large groups.</p>
+                <a href="contact.html" class="btn btn-outline" style="margin-top:20px;">Contact for Corporate Tie-up</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo" style="margin-bottom:15px;"><img src="images/bt-logo.png" alt="Boisar Travels" style="height:50px; width:auto; filter:brightness(0) invert(1);"></div>
+                    <p>Your Journey, Our Responsibility — Premium travel solutions in Boisar and beyond for over 5 years.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Airport Transfers</li>
+                        <li>Outstation Trips</li>
+                        <li>Corporate Rental</li>
+                        <li>Wedding Cars</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>Boisar Station Road, Boisar West, 401501</div>
+                    <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25 1.02l-2.2 2.2z"/></svg>+91 86248 49674</div>
+                    <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>boisartourandtravels@gmail.com</div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>© 2025 Boisar Travels. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

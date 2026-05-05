@@ -43,4 +43,56 @@ document.addEventListener('DOMContentLoaded', () => {
             slides[currentSlide].classList.add('active');
         }, 5000);
     }
+
+    /* ===== Promo Modals Sequence ===== */
+    const promoModal = document.getElementById('promoModal');
+    const damanModal = document.getElementById('damanModal');
+
+    if (promoModal) {
+        // Show immediately on every refresh
+        setTimeout(() => {
+            promoModal.classList.add('active');
+        }, 500);
+
+        const closeBtn = promoModal.querySelector('.close-modal');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                promoModal.classList.remove('active');
+            });
+        }
+        promoModal.addEventListener('click', (e) => {
+            if (e.target === promoModal) promoModal.classList.remove('active');
+        });
+    }
+
+    if (damanModal) {
+        // Show after 15 seconds
+        setTimeout(() => {
+            // Close first modal if still open
+            if (promoModal) promoModal.classList.remove('active');
+            damanModal.classList.add('active');
+        }, 15000);
+
+        const closeBtn = damanModal.querySelector('.close-modal');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                damanModal.classList.remove('active');
+            });
+        }
+        damanModal.addEventListener('click', (e) => {
+            if (e.target === damanModal) damanModal.classList.remove('active');
+        });
+    }
+
+    /* ===== Scroll Progress Car ===== */
+    const scrollProgressCar = document.getElementById('scrollProgressCar');
+    if (scrollProgressCar) {
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            // The car stays within the track from top 0% to 100%
+            scrollProgressCar.style.top = scrolled + "%";
+        });
+    }
 });

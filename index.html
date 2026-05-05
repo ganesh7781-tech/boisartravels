@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Boisar Travels — Best Car Rental & Taxi Service in Boisar, Palghar</title>
-<link rel="icon" type="image/png" href="bt-logo.png">
+<link rel="icon" type="image/png" href="images/bt-logo.png">
 <meta name="description" content="Book reliable cab, car rental, airport transfer, tempo traveller and bus services in Boisar, Palghar, Tarapur MIDC. 24/7 available.">
 <meta name="keywords" content="car rental in Boisar, taxi service in Boisar, Boisar to Mumbai Airport cab, tempo traveller Palghar, bus rental Boisar">
 <meta property="og:title" content="Boisar Travels — Premium Tours & Travels">
@@ -21,7 +21,7 @@
 .hero-inner{position:relative;z-index:1;display:flex;align-items:center;gap:60px;padding:120px 0 60px}
 .hero-text{flex:1.2}
 .hero-text h1{font-size:clamp(2.5rem,6vw,4rem);font-weight:800;line-height:1.1;margin-bottom:24px;letter-spacing:-2px}
-.hero-text h1 span{background:linear-gradient(to right,var(--primary),#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-text h1 span{background:linear-gradient(to right, var(--accent), var(--accent-orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero-text p{font-size:1.2rem;color:rgba(255,255,255,0.9);margin-bottom:40px;max-width:550px;line-height:1.6}
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
 .hero-visual{flex:1;display:flex;justify-content:flex-end}
@@ -39,10 +39,10 @@ select.search-field option{background:var(--dark);color:#fff}
 .trust-row{background:linear-gradient(to right,#0a2540,#1a3b5c);padding:20px 0;color:#fff}
 .trust-grid{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
 .trust-item{display:flex;align-items:center;gap:10px;font-weight:600;font-size:.9rem;color:#fff}
-.trust-icon{width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--dark);font-size:0.8rem;flex-shrink:0}
+.trust-icon{width:28px;height:28px;background:var(--gradient-premium);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--dark);font-size:0.8rem;flex-shrink:0}
 
 /* SERVICES */
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:24px}
 .svc-card{background:#fff;border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden;transition:var(--transition)}
 .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--primary)}
 .svc-card img{width:100%;height:200px;object-fit:cover}
@@ -53,7 +53,7 @@ select.search-field option{background:var(--dark);color:#fff}
 /* WHY US */
 .why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;text-align:center}
 .why-item{padding:20px 12px}
-.why-num{width:48px;height:48px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 18px}
+.why-num{width:48px;height:48px;background:var(--gradient-premium);color:var(--dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 18px}
 .why-item h4{font-size:1rem;margin-bottom:8px;font-weight:600}
 .why-item p{font-size:.85rem;color:var(--text-body)}
 
@@ -102,6 +102,139 @@ section.section-dark .container{position:relative;z-index:1}
 .map-box{border-radius:var(--radius-md);overflow:hidden;height:300px;border:1px solid var(--border-light)}
 .map-box iframe{width:100%;height:100%;border:0}
 
+/* SCROLL PROGRESS CAR */
+.scroll-progress-container {
+    position: fixed;
+    left: 15px;
+    top: 120px;
+    bottom: 50px;
+    width: 2px;
+    background: rgba(10, 37, 64, 0.1);
+    z-index: 1000;
+    border-radius: 1px;
+}
+.scroll-progress-car {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55px;
+    will-change: top;
+    pointer-events: none;
+    transition: top 0.1s ease-out;
+}
+.scroll-progress-car img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+@media (max-width: 768px) {
+    .scroll-progress-container { display: none; }
+}
+
+/* PROMO MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.modal.active { display: flex; }
+.modal-content {
+    background: #fff;
+    border-radius: var(--radius-lg);
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: modalScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes modalScale {
+    from { transform: scale(0.7) translateY(30px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+}
+.modal-content img { width: 100%; height: auto; display: block; }
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 100;
+    transition: var(--transition);
+    line-height: 0;
+    padding-bottom: 4px;
+}
+.close-modal:hover { 
+    background: var(--accent-orange);
+    transform: rotate(90deg);
+}
+.modal-footer { padding: 25px; text-align: center; background: #fff; }
+.modal-footer .btn { width: 100%; height: 50px; font-size: 1.1rem; }
+
+@media (max-width: 480px) {
+    .modal-content { max-width: 95%; }
+}
+
+/* FLEET GALLERY */
+.fleet-tabs { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+.fleet-tab { padding: 10px 20px; background: var(--bg-light); border: 1px solid var(--border-light); border-radius: var(--radius-pill); cursor: pointer; font-weight: 600; transition: var(--transition); }
+.fleet-tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+.fleet-category { display: none; }
+.fleet-category.active { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+
+.car-card { background: #fff; border: 1px solid var(--border-light); border-radius: var(--radius-md); overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; }
+.car-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--accent-orange); }
+.car-card img { width: 100%; height: 140px; object-fit: contain; background: #f0f4f8; }
+
+/* DAILY TRIP CARD REFINEMENT */
+.daily-trip-card { position: relative; background: #fff; border: 1px solid var(--border-light); border-radius: var(--radius-md); overflow: hidden; transition: var(--transition); }
+.daily-trip-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.daily-trip-card .trip-img-container { position: relative; height: 220px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.daily-trip-card img { width: 100%; height: 100%; object-fit: contain; transition: var(--transition); }
+.daily-trip-card:hover img { transform: scale(1.05); }
+
+.trip-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 37, 64, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+    backdrop-filter: blur(2px);
+}
+.daily-trip-card:hover .trip-overlay { opacity: 1; }
+.trip-overlay .btn { transform: translateY(20px); transition: var(--transition); }
+.daily-trip-card:hover .trip-overlay .btn { transform: translateY(0); }
+
+.daily-trip-body { padding: 15px; text-align: center; }
+.daily-trip-body h3 { font-size: 1.1rem; color: var(--dark); margin: 0; }
+.car-info { padding: 15px; flex: 1; display: flex; flex-direction: column; }
+.car-info h4 { font-size: 1rem; margin-bottom: 5px; color: var(--dark); }
+.car-info p { font-size: 0.8rem; color: var(--text-body); margin-bottom: 12px; line-height: 1.4; }
+.car-info .btn { margin-top: auto; width: 100%; padding: 8px 16px; font-size: 0.8rem; }
+
+@media (max-width: 768px) {
+    .fleet-category.active { grid-template-columns: 1fr; }
+}
+
 </style>
 </head>
 <body>
@@ -109,15 +242,17 @@ section.section-dark .container{position:relative;z-index:1}
 <!-- NAVBAR -->
 <header>
 <div class="container nav-container">
-<a href="index.html" class="logo"><img src="bt-logo.png" alt="Boisar Travels Logo"></a>
+<a href="index.html" class="logo"><img src="images/bt-logo.png" alt="Boisar Travels Logo"></a>
 <ul class="nav-links">
 <li><a href="index.html" class="active">Home</a></li>
-<li><a href="services.html">Services</a></li>
+<li><a href="#services">Our Services</a></li>
+<li><a href="#fleet">Fleet</a></li>
+<li><a href="#daily-trips">Daily Trips</a></li>
+
 <li><a href="contact.html">Contact</a></li>
 </ul>
 <div class="nav-right">
-<a href="tel:+919820098200" class="nav-phone">📞 +91 98200 98200</a>
-<a href="https://wa.me/919820098200?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="btn btn-primary">Book Now</a>
+<a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="btn btn-primary">Book Now</a>
 <div class="hamburger"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div>
 </div>
 </div>
@@ -136,8 +271,8 @@ section.section-dark .container{position:relative;z-index:1}
 <h1>Boisar's Most Trusted <span>Tours & Travels</span> Service</h1>
 <p>Premium cars, luxury vehicles, buses & tempo travellers — available 24/7 for local, outstation & airport trips.</p>
 <div class="hero-btns">
-<a href="https://wa.me/919820098200" class="btn btn-primary">WhatsApp Booking</a>
-<a href="tel:+919820098200" class="btn btn-outline" style="border-color:#fff; color:#fff;">Call Now</a>
+<a href="https://wa.me/918624849674" class="btn btn-primary">Book Now</a>
+<a href="tel:+918624849674" class="btn btn-outline" style="border-color:#fff; color:#fff;">Call Now</a>
 </div>
 </div>
 <div class="hero-visual reveal">
@@ -147,7 +282,7 @@ section.section-dark .container{position:relative;z-index:1}
 <input class="search-field" type="text" placeholder="Drop Location (e.g. Mumbai Airport)">
 <select class="search-field"><option value="">Select Vehicle</option><option>Sedan (Dzire / Etios)</option><option>SUV (Ertiga / Innova)</option><option>Tempo Traveller</option><option>Luxury (Fortuner / Crysta)</option></select>
 <input class="search-field" type="date">
-<a href="https://wa.me/919820098200?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="btn btn-accent">Search Rides →</a>
+<a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="btn btn-accent">Book Now →</a>
 </div>
 </div>
 </div>
@@ -161,47 +296,7 @@ section.section-dark .container{position:relative;z-index:1}
 <div class="trust-item"><div class="trust-icon">✓</div>Verified Local Drivers</div>
 </div></div></div>
 
-<!-- PRICE ESTIMATE -->
-<section class="section" id="pricing">
-    <div class="container">
-        <div class="section-header reveal" style="margin-bottom:25px;">
-            <h2>Quick Price Estimate</h2>
-            <p>Transparent and fair pricing for all your travel needs</p>
-        </div>
-        <div class="price-grid reveal">
-            <!-- Sedan -->
-            <div class="price-card">
-                <img src="images/sedan dzire.png" alt="Dzire Sedan" class="price-img">
-                <h3>Sedan (Dzire/Etios)</h3>
-                <div class="price-value">₹12<span>/km</span></div>
-            </div>
-            <!-- SUV -->
-            <div class="price-card">
-                <img src="images/suv innova.png" alt="Innova SUV" class="price-img">
-                <h3>SUV (Innova/Ertiga)</h3>
-                <div class="price-value">₹16<span>/km</span></div>
-            </div>
-            <!-- Airport -->
-            <div class="price-card">
-                <img src="images/airport.png" alt="Airport Transfer" class="price-img">
-                <h3>Airport Drop</h3>
-                <div class="price-value">₹2500 <span>onwards</span></div>
-            </div>
-        </div>
 
-
-        <!-- SERVING AREAS -->
-        <div class="serving-areas reveal">
-            <div class="serving-title">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                Serving Areas
-            </div>
-            <p>Boisar East, Boisar West, Tarapur MIDC, Palghar, Dahanu & Vapi.</p>
-            <p style="margin-top:10px; font-size:1rem; font-weight:400; color:var(--text-body);">Daily pickups available from Tarapur companies and residential societies.</p>
-        </div>
-
-    </div>
-</section>
 
 
 <!-- SERVICES with real images -->
@@ -211,27 +306,27 @@ section.section-dark .container{position:relative;z-index:1}
 <div class="svc-grid">
 <div class="svc-card reveal">
 <img src="images/car-rental.png" alt="Car rental sedan" loading="lazy">
-<div class="svc-body"><h3>Car Rental</h3><p>Dzire, Etios & more for local and outstation trips. Comfortable and clean.</p><a href="https://wa.me/919820098200?text=Hi%2C%20I%20want%20to%20book%20a%20Car%20Rental" class="btn btn-primary" style="width:100%; margin-top:15px; justify-content:center;">Book Now</a></div>
+<div class="svc-body"><h3>Car Rental</h3><p>Dzire, Etios & more for local and outstation trips. Comfortable and clean.</p><a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20book%20a%20Car%20Rental" class="btn btn-primary" style="width:100%; margin-top:15px; justify-content:center;">Book Now</a></div>
 </div>
 <div class="svc-card reveal">
 <img src="images/airport.png" alt="Airport terminal transfer" loading="lazy">
-<div class="svc-body"><h3>Airport Transfer</h3><p>Boisar to Mumbai Airport with fixed transparent pricing. 24/7.</p><a href="https://wa.me/919820098200?text=Hi%2C%20I%20want%20to%20book%20Airport%20Transfer" class="btn btn-primary" style="width:100%; margin-top:15px; justify-content:center;">Book Now</a></div>
+<div class="svc-body"><h3>Airport Transfer</h3><p>Boisar to Mumbai Airport with fixed transparent pricing. 24/7.</p><a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20book%20Airport%20Transfer" class="btn btn-primary" style="width:100%; margin-top:15px; justify-content:center;">Book Now</a></div>
 </div>
 <div class="svc-card reveal">
 <img src="images/tempo-bus.png" alt="Bus tempo traveller" loading="lazy">
-<div class="svc-body"><h3>Tempo & Bus</h3><p>9 to 17 seater vehicles for group travel, weddings and events.</p><a href="https://wa.me/919820098200?text=Hi%2C%20I%20want%20to%20book%20Tempo/Bus" class="btn btn-primary" style="width:100%; margin-top:15px; justify-content:center;">Book Now</a></div>
+<div class="svc-body"><h3>Tempo & Bus</h3><p>9 to 17 seater vehicles for group travel, weddings and events.</p><a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20book%20Tempo/Bus" class="btn btn-primary" style="width:100%; margin-top:15px; justify-content:center;">Book Now</a></div>
 </div>
 <div class="svc-card reveal">
 <img src="images/luxury-car.png" alt="Luxury SUV rental" loading="lazy">
-<div class="svc-body"><h3>Luxury Rental</h3><p>Fortuner, Innova Crysta for weddings, VIP guests and special events.</p><a href="https://wa.me/919820098200?text=Hi%2C%20I%20want%20to%20book%20Luxury%20Rental" class="btn btn-primary" style="width:100%; margin-top:15px; justify-content:center;">Book Now</a></div>
+<div class="svc-body"><h3>Luxury Rental</h3><p>Fortuner, Innova Crysta for weddings, VIP guests and special events.</p><a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20book%20Luxury%20Rental" class="btn btn-primary" style="width:100%; margin-top:15px; justify-content:center;">Book Now</a></div>
 </div>
 <div class="svc-card reveal">
 <img src="images/outstation.png" alt="Outstation road trip" loading="lazy">
-<div class="svc-body"><h3>Outstation Trips</h3><p>Shirdi, Nashik, Lonavala, Goa — expert drivers, fair rates.</p><a href="https://wa.me/919820098200?text=Hi%2C%20I%20want%20to%20book%20Outstation%20Trip" class="btn btn-primary" style="width:100%; margin-top:15px; justify-content:center;">Book Now</a></div>
+<div class="svc-body"><h3>Outstation Trips</h3><p>Shirdi, Nashik, Lonavala, Goa — expert drivers, fair rates.</p><a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20book%20Outstation%20Trip" class="btn btn-primary" style="width:100%; margin-top:15px; justify-content:center;">Book Now</a></div>
 </div>
 <div class="svc-card reveal">
 <img src="images/corporate.png" alt="Corporate transport" loading="lazy">
-<div class="svc-body"><h3>Corporate Transport</h3><p>Employee pickup/drop for Tarapur MIDC companies. Monthly billing.</p><a href="https://wa.me/919820098200?text=Hi%2C%20I%20want%20to%20enquire%20about%20Corporate%20Transport" class="btn btn-primary" style="width:100%; margin-top:15px; justify-content:center;">Book Now</a></div>
+<div class="svc-body"><h3>Corporate Transport</h3><p>Employee pickup/drop for Tarapur MIDC companies. Monthly billing.</p><a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20enquire%20about%20Corporate%20Transport" class="btn btn-primary" style="width:100%; margin-top:15px; justify-content:center;">Book Now</a></div>
 </div>
 </div>
 </div>
@@ -255,20 +350,265 @@ section.section-dark .container{position:relative;z-index:1}
 
 
 
-<!-- ABOUT with real image -->
+<!-- ABOUT & MISSION/VISION -->
 <section class="section" id="about">
 <div class="container">
 <div class="about-grid">
 <div class="about-text reveal">
-<h2>Driven by Trust. <br>Powered by <span class="primary-text">Service.</span></h2>
-<p>Boisar Travels was founded with a simple mission: to provide the most reliable, comfortable, and professional travel services in the Palghar district.</p>
+<h2>Driven by Trust. <br>Powered by <span class="primary-text" style="color:var(--accent-orange)">Service.</span></h2>
+<p>Boisar Travels was founded in 2018 with a simple mission: to provide the most reliable, comfortable, and professional travel services in the Palghar district.</p>
 <p>Our fleet consists of well-maintained vehicles driven by professional chauffeurs who prioritize your safety. We serve Boisar, Palghar, and Tarapur MIDC communities 24/7.</p>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:30px;">
+    <div>
+        <h4 style="color:var(--dark); margin-bottom:10px; display:flex; align-items:center; gap:8px;"><span style="width:24px; height:24px; background:var(--accent); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem;">🎯</span> Our Mission</h4>
+        <p style="font-size:0.9rem;">To provide safe, punctual, and premium travel experiences that connect people and businesses across Maharashtra.</p>
+    </div>
+    <div>
+        <h4 style="color:var(--dark); margin-bottom:10px; display:flex; align-items:center; gap:8px;"><span style="width:24px; height:24px; background:var(--accent); border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem;">👁️</span> Our Vision</h4>
+        <p style="font-size:0.9rem;">To become the most preferred and trusted travel partner in the Palghar district through innovation and excellence.</p>
+    </div>
+</div>
 </div>
 <div class="about-img reveal">
 <img src="images/premium-service.png" alt="Premium car service" loading="lazy">
 </div>
 </div>
 </div>
+</section>
+
+<!-- FLEET GALLERY SECTION -->
+<section class="section section-light" id="fleet" style="padding: 40px 0;">
+    <div class="container">
+        <div class="section-header reveal">
+            <h2>Our Premium Fleet Gallery</h2>
+            <p>Explore our wide range of vehicles. Select a category to see available cars.</p>
+        </div>
+
+        <div class="fleet-tabs reveal">
+            <div class="fleet-tab active" onclick="showFleet('sedan', this)">Sedans</div>
+            <div class="fleet-tab" onclick="showFleet('suv', this)">SUVs / MUVs</div>
+            <div class="fleet-tab" onclick="showFleet('luxury', this)">Luxury Cars</div>
+            <div class="fleet-tab" onclick="showFleet('group', this)">Tempo & Bus</div>
+        </div>
+
+        <!-- SEDANS -->
+        <div id="fleet-sedan" class="fleet-category active reveal">
+            <div class="car-card">
+                <img src="images/sedan dzire.png" alt="Maruti Dzire">
+                <div class="car-info">
+                    <h4>Maruti Suzuki Dzire</h4>
+                    <p>Comfortable 4-seater sedan, perfect for local and airport trips.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Maruti%20Dzire" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/etios.png" alt="Toyota Etios">
+                <div class="car-info">
+                    <h4>Toyota Etios</h4>
+                    <p>Reliable and spacious executive sedan for long journeys.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Toyota%20Etios" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/Hyundai Xcent.png" alt="Hyundai Xcent">
+                <div class="car-info">
+                    <h4>Hyundai Xcent / Aura</h4>
+                    <p>Modern features and smooth ride for business travel.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Hyundai%20Xcent" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/Honda Amaze.png" alt="Honda Amaze">
+                <div class="car-info">
+                    <h4>Honda Amaze</h4>
+                    <p>Premium compact sedan with great comfort and safety.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Honda%20Amaze" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUVS -->
+        <div id="fleet-suv" class="fleet-category reveal">
+            <div class="car-card">
+                <img src="images/innvoa crysta.png" alt="Toyota Innova Crysta">
+                <div class="car-info">
+                    <h4>Toyota Innova Crysta</h4>
+                    <p>The gold standard for premium group travel and long trips.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Innova%20Crysta" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/Maruti Suzuki Ertiga.png" alt="Maruti Ertiga">
+                <div class="car-info">
+                    <h4>Maruti Suzuki Ertiga</h4>
+                    <p>Comfortable 6-seater MUV, ideal for family outings.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Maruti%20Ertiga" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/Maruti Suzuki Ertiga (2).png" alt="Kia Carens">
+                <div class="car-info">
+                    <h4>Kia Carens</h4>
+                    <p>Stylish and spacious 7-seater with modern amenities.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Kia%20Carens" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/Mahindra Marazzo.png" alt="Mahindra Marazzo">
+                <div class="car-info">
+                    <h4>Mahindra Marazzo</h4>
+                    <p>Solid build and smooth ride for heavy-duty travel.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Mahindra%20Marazzo" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- LUXURY -->
+        <div id="fleet-luxury" class="fleet-category reveal">
+            <div class="car-card">
+                <img src="images/luxury-car.png" alt="Toyota Fortuner">
+                <div class="car-info">
+                    <h4>Toyota Fortuner</h4>
+                    <p>Powerful SUV for VIP travel and tough terrains.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Toyota%20Fortuner" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/Mercedes-Benz E-Class.png" alt="Mercedes E-Class">
+                <div class="car-info">
+                    <h4>Mercedes-Benz E-Class</h4>
+                    <p>The ultimate luxury experience for weddings and VIPs.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Mercedes%20E-Class" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/bmw 5 series.png" alt="BMW 5 Series">
+                <div class="car-info">
+                    <h4>BMW 5 Series</h4>
+                    <p>Performance meets luxury. Perfect for grand entries.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20BMW%205%20Series" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/audi 6.png" alt="Audi A6">
+                <div class="car-info">
+                    <h4>Audi A6</h4>
+                    <p>Sophisticated design and premium comfort for elite travel.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Audi%20A6" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- GROUP TRAVEL -->
+        <div id="fleet-group" class="fleet-category reveal">
+            <div class="car-card">
+                <img src="images/13-17 Seater Tempo Traveller.png" alt="Tempo Traveller">
+                <div class="car-info">
+                    <h4>13-17 Seater Tempo Traveller</h4>
+                    <p>Best for family tours, pilgrimages, and group outings.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Tempo%20Traveller" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/20 - 25 seater bus.png" alt="Mini Bus">
+                <div class="car-info">
+                    <h4>20-26 Seater Mini Bus</h4>
+                    <p>Ideal for corporate staff transport and wedding events.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Mini%20Bus" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+            <div class="car-card">
+                <img src="images/30 - 35 seater bus.png" alt="Luxury Bus">
+                <div class="car-info">
+                    <h4>35-45 Seater AC Luxury Bus</h4>
+                    <p>Large capacity coaches for marriage parties and school tours.</p>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Luxury%20Bus" class="btn btn-primary">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function showFleet(category, element) {
+    // Hide all categories
+    document.querySelectorAll('.fleet-category').forEach(cat => cat.classList.remove('active'));
+    // Show selected category
+    document.getElementById('fleet-' + category).classList.add('active');
+    
+    // Update active tab
+    document.querySelectorAll('.fleet-tab').forEach(tab => tab.classList.remove('active'));
+    element.classList.add('active');
+}
+</script>
+
+<!-- DAILY TRIPS SECTION -->
+<section class="section" id="daily-trips">
+    <div class="container">
+        <div class="section-header reveal">
+            <h2>Daily Routes & Trips</h2>
+            <p>Reliable daily commute services for professionals and students</p>
+        </div>
+        <div class="svc-grid">
+            <div class="daily-trip-card reveal">
+                <div class="trip-img-container">
+                    <img src="images/Boisar to Daman.png" alt="Boisar to Daman Daily Trip">
+                    <div class="trip-overlay">
+                        <a href="daily-trips.html" class="btn btn-primary">See Details</a>
+                    </div>
+                </div>
+                <div class="daily-trip-body">
+                    <h3>Boisar ↔ Daman Daily</h3>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Boisar-Daman%20Daily%20Trip" class="btn btn-primary" style="margin-top:10px; width:100%; justify-content:center;">Book Now</a>
+                </div>
+            </div>
+            <div class="daily-trip-card reveal">
+                <div class="trip-img-container">
+                    <img src="images/Creative For Boisar Tour and Travels.png" alt="Boisar to Mumbai Daily">
+                    <div class="trip-overlay">
+                        <a href="daily-trips.html" class="btn btn-primary">See Details</a>
+                    </div>
+                </div>
+                <div class="daily-trip-body">
+                    <h3>Boisar ↔ Mumbai Daily</h3>
+                    <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Boisar-Mumbai%20Daily%20Trip" class="btn btn-primary" style="margin-top:10px; width:100%; justify-content:center;">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ROUTES SECTION -->
+<section class="section section-light" id="routes">
+    <div class="container">
+        <div class="section-header reveal">
+            <h2>Popular Routes</h2>
+            <p>Reliable intercity and airport transfer services at fixed rates</p>
+        </div>
+        <div class="svc-grid">
+            <div class="svc-card reveal">
+                <div class="svc-body">
+                    <h3 style="color:var(--accent-orange)">Boisar ↔ Mumbai Airport</h3>
+                    <p>Punctual drop and pickup services with flight tracking. Available 24/7.</p>
+                    <div style="margin-top:15px; font-weight:700; color:var(--dark)">Starting from ₹2500</div>
+                </div>
+            </div>
+            <div class="svc-card reveal">
+                <div class="svc-body">
+                    <h3 style="color:var(--accent-orange)">Boisar ↔ Shirdi / Nashik</h3>
+                    <p>Day trips and overnight packages for pilgrimage and leisure trips.</p>
+                    <div style="margin-top:15px; font-weight:700; color:var(--dark)">Fixed Rate Packages</div>
+                </div>
+            </div>
+            <div class="svc-card reveal">
+                <div class="svc-body">
+                    <h3 style="color:var(--accent-orange)">Boisar ↔ Vapi / Surat</h3>
+                    <p>Interstate travel with all permits and taxes included. Experienced drivers.</p>
+                    <div style="margin-top:15px; font-weight:700; color:var(--dark)">₹12/km onwards</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- TESTIMONIALS -->
@@ -290,7 +630,7 @@ section.section-dark .container{position:relative;z-index:1}
 <div class="cta-banner reveal">
 <h2>Ready to Book Your Ride?</h2>
 <p>Get instant confirmation via WhatsApp — available 24/7</p>
-<a href="https://wa.me/919820098200?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="btn btn-dark">Book on WhatsApp →</a>
+<a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="btn btn-dark">Book on WhatsApp →</a>
 </div>
 </div>
 </section>
@@ -301,10 +641,10 @@ section.section-dark .container{position:relative;z-index:1}
 <div class="contact-row reveal">
 <div class="contact-box">
 <div class="contact-item"><div class="contact-icon">📍</div><div class="contact-text"><h4>Location</h4><p>Boisar Railway Station Road, Boisar West, Palghar - 401501, Maharashtra</p></div></div>
-<div class="contact-item"><div class="contact-icon">📞</div><div class="contact-text"><h4>Phone</h4><p>+91 98200 98200</p></div></div>
+
 <div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-text"><h4>Email</h4><p>boisartourandtravels@gmail.com</p></div></div>
 <div class="contact-item"><div class="contact-icon">⏰</div><div class="contact-text"><h4>Hours</h4><p>24/7 Available</p></div></div>
-<div style="margin-top:20px"><a href="https://wa.me/919820098200" class="btn btn-primary" style="width:100%;justify-content:center">Message on WhatsApp</a></div>
+<div style="margin-top:20px"><a href="https://wa.me/918624849674" class="btn btn-primary" style="width:100%;justify-content:center">Message on WhatsApp</a></div>
 </div>
 <div class="map-box">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15024.18!2d72.7528!3d19.8045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71d60464f1c1f%3A0x6a1c5d9e5b7b1b1a!2sBoisar%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen loading="lazy"></iframe>
@@ -320,12 +660,12 @@ section.section-dark .container{position:relative;z-index:1}
 <footer>
 <div class="container">
 <div class="footer-grid">
-<div class="footer-brand"><div class="logo" style="margin-bottom:15px;"><img src="bt-logo.png" alt="Boisar Travels" style="height:50px; width:auto; filter:brightness(0) invert(1);"></div><p>Your Journey, Our Responsibility — Premium travel solutions in Boisar and beyond for over 5 years.</p></div>
+<div class="footer-brand"><div class="logo" style="margin-bottom:15px;"><img src="images/bt-logo.png" alt="Boisar Travels" style="height:50px; width:auto; filter:brightness(0) invert(1);"></div><p>Your Journey, Our Responsibility — Premium travel solutions in Boisar and beyond for over 5 years.</p></div>
 <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
 <div class="footer-col"><h4>Services</h4><ul><li>Airport Transfers</li><li>Outstation Trips</li><li>Corporate Rental</li><li>Wedding Cars</li></ul></div>
 <div class="footer-col"><h4>Contact</h4>
 <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>Boisar Station Road, Boisar West, 401501</div>
-<div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25 1.02l-2.2 2.2z"/></svg>+91 98200 98200</div>
+<div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25 1.02l-2.2 2.2z"/></svg>+91 86248 49674</div>
 <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>boisartourandtravels@gmail.com</div>
 </div>
 </div>
@@ -333,8 +673,37 @@ section.section-dark .container{position:relative;z-index:1}
 </div>
 </footer>
 
-<a href="https://wa.me/919820098200?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="whatsapp-float"><svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.63 1.438h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="whatsapp-float"><svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.63 1.438h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<!-- SCROLL PROGRESS CAR -->
+<div class="scroll-progress-container">
+    <div id="scrollProgressCar" class="scroll-progress-car">
+        <img src="images/scroll car.jpg" alt="Scroll Indicator Car">
+    </div>
+</div>
+
+<!-- PROMO MODAL 1 -->
+<div id="promoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img src="images/Creative For Boisar Tour and Travels.png" alt="Special Offer Boisar Travels">
+        <div class="modal-footer">
+            <a href="https://wa.me/918624849674?text=Hi%2C%20I%20saw%20your%20offer%20and%20want%20to%20book" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- PROMO MODAL 2 (Daman) -->
+<div id="damanModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <img src="images/Boisar to Daman.png" alt="Boisar to Daman Special">
+        <div class="modal-footer">
+            <a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20book%20Daman%20Daily%20Trip" class="btn btn-primary">Book Now</a>
+        </div>
+    </div>
+</div>
+
 <script src="main.js"></script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Boisar Travels","telephone":"+919820098200","address":{"@type":"PostalAddress","streetAddress":"Boisar Station Road, Boisar West","addressLocality":"Palghar","postalCode":"401501","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":19.8045,"longitude":72.7528}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Boisar Travels","telephone":"+918624849674","address":{"@type":"PostalAddress","streetAddress":"Boisar Station Road, Boisar West","addressLocality":"Palghar","postalCode":"401501","addressCountry":"IN"},"geo":{"@type":"GeoCoordinates","latitude":19.8045,"longitude":72.7528}}</script>
 </body>
 </html>
