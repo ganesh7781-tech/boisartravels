@@ -6,58 +6,33 @@
 <title>Contact Us — Boisar Travels</title>
 <link rel="icon" type="image/png" href="images/bt-logo.png">
 <link rel="stylesheet" href="style.css">
-<style>
-.page-hero{position:relative;padding:120px 0 60px;text-align:center;color:#fff;overflow:hidden}
-.page-hero-bg{position:absolute;inset:0;z-index:0}
-.page-hero-bg img{width:100%;height:100%;object-fit:cover}
-.page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(11,29,38,.9),rgba(11,29,38,.7))}
-.page-hero .container{position:relative;z-index:1}
-.page-hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:800;margin-bottom:12px;letter-spacing:-1px}
-.page-hero p{color:rgba(255,255,255,.7);font-size:1.05rem}
-
-.contact-wrap{max-width:850px;margin:-60px auto 0;position:relative;z-index:2}
-.contact-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);overflow:hidden;display:grid;grid-template-columns:1fr;border:1px solid var(--border-light)}
-.contact-form-body{padding:50px}
-.contact-form-body h2{font-size:1.6rem;font-weight:700;margin-bottom:30px;color:var(--dark);display:flex;align-items:center;gap:12px}
-.contact-form-body h2::after{content:'';flex:1;height:1px;background:var(--border-light)}
-
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.form-group{margin-bottom:20px}
-.form-group.full{grid-column:span 2}
-.form-group label{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:.85rem;font-weight:600;color:var(--text-body)}
-.form-group label svg{color:var(--accent-orange)}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:14px 18px;border:1px solid var(--border-light);border-radius:var(--radius-md);font-family:'Poppins',sans-serif;font-size:.92rem;color:var(--text-dark);outline:none;transition:var(--transition);background:var(--bg-light)}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary);background:#fff;box-shadow:0 0 0 4px rgba(212,175,55,0.1)}
-
-.contact-footer{text-align:center;margin-top:40px;padding:30px 0;border-top:1px solid var(--border-light);background:var(--bg-light);display:flex;justify-content:center;gap:40px}
-.trust-mini{display:flex;align-items:center;gap:10px;font-size:.85rem;font-weight:500;color:var(--text-body)}
-.trust-mini i{color:var(--primary);font-size:1.1rem}
-
-
-</style>
 </head>
 <body>
-<header>
+<header class="header-sub">
 <div class="container nav-container">
 <a href="index.html" class="logo"><img src="images/bt-logo.png" alt="Boisar Travels Logo"></a>
 <ul class="nav-links">
 <li><a href="index.html">Home</a></li>
-<li><a href="index.html#services">Our Services</a></li>
-<li><a href="index.html#fleet">Fleet</a></li>
-<li><a href="index.html#daily-trips">Daily Trips</a></li>
-
+<li><a href="services.html">Services</a></li>
+<li><a href="fleet.html">Fleet</a></li>
+<li><a href="packages.html">Packages</a></li>
+<li><a href="about.html">About Us</a></li>
 <li><a href="contact.html" class="active">Contact</a></li>
 </ul>
 <div class="nav-right">
-<a href="https://wa.me/918624849674" class="btn btn-primary">Book Now</a>
-<div class="hamburger"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div>
+<a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="btn btn-accent">Book Now</a>
+<div class="hamburger"><div></div><div></div><div></div></div>
 </div>
 </div>
 </header>
 
-<section class="page-hero">
-<div class="page-hero-bg"><img src="images/luxury-car.png" alt="Luxury Car Background" loading="lazy"></div>
-<div class="container"><h1 class="reveal">Plan Your Journey</h1><p class="reveal">Expert travel solutions at your fingertips. 24/7 Support.</p></div>
+<section class="hero hero-sub">
+<div class="container hero-inner" style="justify-content: center; text-align: center;">
+<div class="hero-text reveal">
+<h1>Plan Your <span>Journey</span></h1>
+<p>Expert travel solutions at your fingertips. 24/7 Support for all your travel needs.</p>
+</div>
+</div>
 </section>
 
 <section class="section" style="padding-top:0">
@@ -122,6 +97,9 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="services.html">Services</a></li>
+                        <li><a href="fleet.html">Fleet</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>

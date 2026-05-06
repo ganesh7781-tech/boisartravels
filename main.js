@@ -84,15 +84,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ===== Scroll Progress Car ===== */
-    const scrollProgressCar = document.getElementById('scrollProgressCar');
-    if (scrollProgressCar) {
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            // The car stays within the track from top 0% to 100%
-            scrollProgressCar.style.top = scrolled + "%";
+
+    /* ===== Quick Booking WhatsApp Handler ===== */
+    const bookBtn = document.getElementById('formWhatsApp');
+    if (bookBtn) {
+        bookBtn.addEventListener('click', (e) => {
+            const pickup = document.getElementById('pickupLoc').value;
+            const drop = document.getElementById('dropLoc').value;
+            const vehicle = document.getElementById('vehicleType').value;
+            const date = document.getElementById('travelDate').value;
+
+            let message = "Hi Boisar Travels! I would like to book a ride.%0A%0A";
+            if (pickup) message += "*From:* " + pickup + "%0A";
+            if (drop) message += "*To:* " + drop + "%0A";
+            if (vehicle) message += "*Vehicle:* " + vehicle + "%0A";
+            if (date) message += "*Date:* " + date + "%0A";
+            message += "%0APlease confirm availability.";
+
+            bookBtn.href = "https://wa.me/918624849674?text=" + message;
         });
     }
+
 });

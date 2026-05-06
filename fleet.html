@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Fleet — Boisar Travels</title>
+    <link rel="icon" type="image/png" href="images/bt-logo.png">
+    <meta name="description" content="Explore our premium fleet of sedans, SUVs, luxury cars, and buses in Boisar.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header-sub">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="images/bt-logo.png" alt="Boisar Travels Logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="fleet.html" class="active">Fleet</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="btn btn-accent">Book Now</a>
+                <div class="hamburger"><div></div><div></div><div></div></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero hero-sub">
+        <div class="container hero-inner" style="justify-content: center; text-align: center;">
+            <div class="hero-text reveal">
+                <h1>Our Premium <span>Fleet</span></h1>
+                <p>Wide range of well-maintained vehicles for every travel need.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLEET GALLERY SECTION -->
+    <section class="section section-light" id="fleet">
+        <div class="container">
+            <div class="section-header reveal" style="margin-bottom: 20px;">
+                <h2>Our Vehicle Gallery</h2>
+            </div>
+
+            <div class="fleet-tabs reveal">
+                <div class="fleet-tab active" onclick="showFleet('sedan', this)">Sedans</div>
+                <div class="fleet-tab" onclick="showFleet('suv', this)">SUVs / MUVs</div>
+                <div class="fleet-tab" onclick="showFleet('luxury', this)">Luxury Cars</div>
+                <div class="fleet-tab" onclick="showFleet('group', this)">Tempo & Bus</div>
+            </div>
+
+            <!-- SEDANS -->
+            <div id="fleet-sedan" class="fleet-category active reveal">
+                <div class="car-card">
+                    <img src="images/sedan dzire.png" alt="Maruti Dzire">
+                    <div class="car-info">
+                        <h4>Maruti Suzuki Dzire</h4>
+                        <p>Comfortable 4-seater sedan, perfect for local and airport trips.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Maruti%20Dzire" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/etios.png" alt="Toyota Etios">
+                    <div class="car-info">
+                        <h4>Toyota Etios</h4>
+                        <p>Reliable and spacious executive sedan for long journeys.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Toyota%20Etios" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/Hyundai Xcent.png" alt="Hyundai Xcent">
+                    <div class="car-info">
+                        <h4>Hyundai Xcent / Aura</h4>
+                        <p>Modern features and smooth ride for business travel.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Hyundai%20Xcent" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/Honda Amaze.png" alt="Honda Amaze">
+                    <div class="car-info">
+                        <h4>Honda Amaze</h4>
+                        <p>Premium compact sedan with great comfort and safety.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Honda%20Amaze" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUVS -->
+            <div id="fleet-suv" class="fleet-category reveal">
+                <div class="car-card">
+                    <img src="images/innvoa crysta.png" alt="Toyota Innova Crysta">
+                    <div class="car-info">
+                        <h4>Toyota Innova Crysta</h4>
+                        <p>The gold standard for premium group travel and long trips.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Innova%20Crysta" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/Maruti Suzuki Ertiga.png" alt="Maruti Ertiga">
+                    <div class="car-info">
+                        <h4>Maruti Suzuki Ertiga</h4>
+                        <p>Comfortable 6-seater MUV, ideal for family outings.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Maruti%20Ertiga" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/Maruti Suzuki Ertiga (2).png" alt="Kia Carens">
+                    <div class="car-info">
+                        <h4>Kia Carens</h4>
+                        <p>Stylish and spacious 7-seater with modern amenities.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Kia%20Carens" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/Mahindra Marazzo.png" alt="Mahindra Marazzo">
+                    <div class="car-info">
+                        <h4>Mahindra Marazzo</h4>
+                        <p>Solid build and smooth ride for heavy-duty travel.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Mahindra%20Marazzo" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LUXURY -->
+            <div id="fleet-luxury" class="fleet-category reveal">
+                <div class="car-card">
+                    <img src="images/luxury-car.png" alt="Toyota Fortuner">
+                    <div class="car-info">
+                        <h4>Toyota Fortuner</h4>
+                        <p>Powerful SUV for VIP travel and tough terrains.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Toyota%20Fortuner" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/Mercedes-Benz E-Class.png" alt="Mercedes E-Class">
+                    <div class="car-info">
+                        <h4>Mercedes-Benz E-Class</h4>
+                        <p>The ultimate luxury experience for weddings and VIPs.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Mercedes%20E-Class" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/bmw 5 series.png" alt="BMW 5 Series">
+                    <div class="car-info">
+                        <h4>BMW 5 Series</h4>
+                        <p>Performance meets luxury. Perfect for grand entries.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20BMW%205%20Series" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/audi 6.png" alt="Audi A6">
+                    <div class="car-info">
+                        <h4>Audi A6</h4>
+                        <p>Sophisticated design and premium comfort for elite travel.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Audi%20A6" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GROUP TRAVEL -->
+            <div id="fleet-group" class="fleet-category reveal">
+                <div class="car-card">
+                    <img src="images/13-17 Seater Tempo Traveller.png" alt="Tempo Traveller">
+                    <div class="car-info">
+                        <h4>13-17 Seater Tempo Traveller</h4>
+                        <p>Best for family tours, pilgrimages, and group outings.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Tempo%20Traveller" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/20 - 25 seater bus.png" alt="Mini Bus">
+                    <div class="car-info">
+                        <h4>20-26 Seater Mini Bus</h4>
+                        <p>Ideal for corporate staff transport and wedding events.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Mini%20Bus" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <img src="images/30 - 35 seater bus.png" alt="Luxury Bus">
+                    <div class="car-info">
+                        <h4>35-45 Seater AC Luxury Bus</h4>
+                        <p>Large capacity coaches for marriage parties and school tours.</p>
+                        <a href="https://wa.me/918624849674?text=I%20want%20to%20book%20Luxury%20Bus" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo" style="margin-bottom:15px;"><img src="images/bt-logo.png" alt="Boisar Travels" style="height:50px; width:auto; filter:brightness(0) invert(1);"></div>
+                    <p>Your Journey, Our Responsibility — Premium travel solutions in Boisar and beyond for over 5 years.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                                        <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="fleet.html">Fleet</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Airport Transfers</li>
+                        <li>Outstation Trips</li>
+                        <li>Corporate Rental</li>
+                        <li>Wedding Cars</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>Boisar Station Road, Boisar West, 401501</div>
+                    <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25 1.02l-2.2 2.2z"/></svg>+91 86248 49674</div>
+                    <div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>boisartourandtravels@gmail.com</div>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>© 2025 Boisar Travels. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+    function showFleet(category, element) {
+        document.querySelectorAll('.fleet-category').forEach(cat => cat.classList.remove('active'));
+        document.getElementById('fleet-' + category).classList.add('active');
+        document.querySelectorAll('.fleet-tab').forEach(tab => tab.classList.remove('active'));
+        element.classList.add('active');
+    }
+    </script>
+</body>
+
+</html>

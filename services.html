@@ -9,186 +9,33 @@
     <meta name="description"
         content="Car rental, airport transfer, tempo traveller, luxury car and corporate transport services in Boisar, Palghar.">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .page-hero {
-            position: relative;
-            padding: 100px 0 50px;
-            text-align: center;
-            color: #fff;
-            overflow: hidden
-        }
-
-        .page-hero-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0
-        }
-
-        .page-hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover
-        }
-
-        .page-hero-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(11, 29, 38, .85)
-        }
-
-        .page-hero .container {
-            position: relative;
-            z-index: 1
-        }
-
-        .page-hero h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 12px
-        }
-
-        .page-hero p {
-            color: rgba(255, 255, 255, .6);
-            font-size: 1.05rem
-        }
-
-        .svc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 28px
-        }
-
-        .svc-card {
-            background: #fff;
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            transition: var(--transition)
-        }
-
-        .svc-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--primary)
-        }
-
-        .svc-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover
-        }
-
-        .svc-body {
-            padding: 24px
-        }
-
-        .svc-body h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 10px
-        }
-
-        .svc-body p {
-            font-size: .92rem;
-            color: var(--text-body);
-            margin-bottom: 22px;
-            line-height: 1.7
-        }
-
-        .corp-section {
-            background: var(--dark);
-            color: #fff;
-            border-radius: var(--radius-lg);
-            padding: 60px;
-            margin-top: 60px;
-            display: flex;
-            gap: 50px;
-            align-items: center;
-            flex-wrap: wrap
-        }
-
-        .corp-text {
-            flex: 1;
-            min-width: 280px
-        }
-
-        .corp-text h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 16px
-        }
-
-        .corp-text p {
-            color: rgba(255, 255, 255, .6);
-            margin-bottom: 28px
-        }
-
-        .corp-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 30px
-        }
-
-        .corp-list li {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: .92rem;
-            color: rgba(255, 255, 255, .8)
-        }
-
-        .corp-list li::before {
-            content: '✓';
-            color: var(--primary);
-            font-weight: 700
-        }
-
-        .corp-img {
-            flex: 1;
-            min-width: 280px;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            height: 300px
-        }
-
-        .corp-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover
-        }
-    </style>
 </head>
 
 <body>
-    <header>
+    <header class="header-sub">
         <div class="container nav-container">
             <a href="index.html" class="logo"><img src="images/bt-logo.png" alt="Boisar Travels Logo"></a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html" class="active">Our Services</a></li>
-                <li><a href="index.html#fleet">Fleet</a></li>
-                <li><a href="index.html#daily-trips">Daily Trips</a></li>
-                
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="fleet.html">Fleet</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav-right">
-                <a href="https://wa.me/918624849674" class="btn btn-primary">Book Now</a>
-                <div class="hamburger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
+                <a href="https://wa.me/918624849674?text=Hi%2C%20I%20want%20to%20book%20a%20cab" class="btn btn-accent">Book Now</a>
+                <div class="hamburger"><div></div><div></div><div></div></div>
             </div>
         </div>
     </header>
 
-    <section class="page-hero">
-        <div class="page-hero-bg"><img src="images/airport.png" alt="Airport Transfer Background" loading="lazy"></div>
-        <div class="container">
-            <h1 class="reveal">Our Premium Services</h1>
-            <p class="reveal">Tailored travel solutions for every journey</p>
+    <section class="hero hero-sub">
+        <div class="container hero-inner" style="justify-content: center; text-align: center;">
+            <div class="hero-text reveal">
+                <h1>Our Premium <span>Services</span></h1>
+                <p>Tailored travel solutions for every journey. From airport transfers to corporate logistics.</p>
+            </div>
         </div>
     </section>
 
@@ -277,9 +124,12 @@
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
-                    <ul>
+                                        <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="services.html">Services</a></li>
+                        <li><a href="fleet.html">Fleet</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
