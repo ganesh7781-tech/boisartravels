@@ -1,3 +1,13 @@
+/* ===== Preloader Logic ===== */
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+        }, 500); // Small delay for visual smoothness
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     /* ===== Navbar Scroll ===== */
     const header = document.querySelector('header');
